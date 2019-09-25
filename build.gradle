@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'java-test-fixtures'
+}
+
+repositories {
+    jcenter()
+}
+
+group = 'at.myorg.testfixtures'
+version = '0.1.0-SNAPSHOT'
+
+def versions = [junit: '5.5.2']
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$versions.junit"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$versions.junit"
+}
+
+test {
+    useJUnitPlatform()
+}
